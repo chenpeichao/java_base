@@ -10,23 +10,24 @@ package org.pcchen.javase.jvm;
 public class LambdaExpress02 {
     public static void main(String[] args) {
         Foo foo = new Foo() {
-            @Override
-            public void sayHello() {
-                System.out.println("hello jerry!");
-            }
+//            @Override
+//            public void sayHello() {
+//                System.out.println("hello jerry!");
+//            }
 
             @Override
-            public int add(int a, int b) {
+            public int mul(int a, int b) {
                 return a + b;
             }
         };
 
         System.out.println(foo.add(2, 3));
-        foo.sayHello();
+//        foo.sayHello();
 
 
-        Foo foo2 = () -> {
+        Foo foo2 = (x, y) -> {
             System.out.println("");
+            return 1;
         };
         int result = foo2.add(1, 2);
         System.out.println(result);
@@ -35,12 +36,18 @@ public class LambdaExpress02 {
 }
 
 @FunctionalInterface
+//当使用@FunctionalInterface注解时，类中有且仅有一个无方法体的方法
 interface Foo {
-    public void sayHello();
+//    public void sayHello();
 
     public default int add(int a, int b) {
         return a + b;
     }
-//    public int mul(int a, int b, int c);
+
+    public default int add(int a, int b, int c) {
+        return a + b;
+    }
+
+    public int mul(int a, int b);
 //    public int mul2(int a, int b, int c);
 }
