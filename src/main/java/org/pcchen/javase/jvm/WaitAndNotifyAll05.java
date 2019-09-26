@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * 线程等待和唤醒demo
  * <p>
- * notify中使用wait要放在while循环里面，放在if中会产生线程安全问题
+ * notify中使用wait要放在while循环里面，放在if中会产生线程虚假唤醒
  * wait和notify需要和synchronized搭配使用
  *
  * @author ceek
