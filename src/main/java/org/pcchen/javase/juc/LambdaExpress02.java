@@ -1,4 +1,4 @@
-package org.pcchen.javase.jvm;
+package org.pcchen.javase.juc;
 
 /**
  * lambda表达式练习

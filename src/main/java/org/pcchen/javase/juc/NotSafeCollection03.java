@@ -1,4 +1,4 @@
-package org.pcchen.javase.jvm;
+package org.pcchen.javase.juc;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
