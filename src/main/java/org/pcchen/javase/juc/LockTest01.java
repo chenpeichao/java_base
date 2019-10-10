@@ -73,7 +73,6 @@ class LockBean {
 
     public void add() {
 
-
         if (num < 100) {
             try {
                 Thread.currentThread().sleep(1000);
