@@ -24,31 +24,31 @@ public class NotSafeCollection03 {
 
     public static void removeEleInLoopSet() {
         //        List<String> list = Collections.synchronizedList(new ArrayList<String>());    //不支持遍历时移除
-        Set<String> set = new CopyOnWriteArraySet<>();       //支持遍历时移除
+        Set<String> set = new CopyOnWriteArraySet<String>();       //支持遍历时移除
         for (int i = 0; i < 10; i++) {
             set.add(String.valueOf(i));
         }
 
-        set.forEach(x -> {
-            if ("5".equals(x)) {
-                set.remove(x);
-            }
-        });
+//        set.forEach(x -> {
+//            if ("5".equals(x)) {
+//                set.remove(x);
+//            }
+//        });
         System.out.println(set);
     }
 
     public static void removeEleInLoopList() {
         //        List<String> list = Collections.synchronizedList(new ArrayList<String>());    //不支持遍历时移除
-        List<String> list = new CopyOnWriteArrayList<>();       //支持遍历时移除
+        List<String> list = new CopyOnWriteArrayList<String>();       //支持遍历时移除
         for (int i = 0; i < 10; i++) {
             list.add(String.valueOf(i));
         }
 
-        list.forEach(x -> {
-            if ("5".equals(x)) {
-                list.remove(x);
-            }
-        });
+//        list.forEach(x -> {
+//            if ("5".equals(x)) {
+//                list.remove(x);
+//            }
+//        });
         System.out.println(list);
     }
 
@@ -56,12 +56,12 @@ public class NotSafeCollection03 {
         Map<Object, Object> map = new HashMap<Object, Object>();      //线程不安全
 //        Map<Object, Object> map = new ConcurrentHashMap<Object, Object>();
 
-        for (int i = 0; i < 40; i++) {
-            new Thread(() -> {
-                map.put(UUID.randomUUID().toString().substring(0, 4), UUID.randomUUID().toString().substring(0, 4));
-                System.out.println(map);
-            }).start();
-        }
+//        for (int i = 0; i < 40; i++) {
+//            new Thread(() -> {
+//                map.put(UUID.randomUUID().toString().substring(0, 4), UUID.randomUUID().toString().substring(0, 4));
+//                System.out.println(map);
+//            }).start();
+//        }
     }
 
     public static void setNotSafe() {
@@ -69,12 +69,12 @@ public class NotSafeCollection03 {
 //        Set<String> set = Collections.synchronizedSet(new HashSet<String>());   //线程安全：add中使用synchronized修饰当前对象
         Set<String> set = new CopyOnWriteArraySet<String>(); //线程安全，内部实现为CopyOnWriteArrayList
 
-        for (int i = 0; i <= 40; i++) {
-            new Thread(() -> {
-                set.add(UUID.randomUUID().toString().substring(0, 8));
-                System.out.println(set);
-            }).start();
-        }
+//        for (int i = 0; i <= 40; i++) {
+//            new Thread(() -> {
+//                set.add(UUID.randomUUID().toString().substring(0, 8));
+//                System.out.println(set);
+//            }).start();
+//        }
     }
 
     public static void listNotSafe() {
@@ -83,11 +83,11 @@ public class NotSafeCollection03 {
 //        List<String> list = Collections.synchronizedList(new ArrayList<String>()); //线程安全：内部看形参中的实例如果不是RandomAccess，则新建SynchronizedList,add中使用synchronized修饰当前对象
         List<String> list = new CopyOnWriteArrayList<String>(); //线程安全的，使用重入锁，复制一份集合，然后再重新指向集合
 
-        for (int i = 0; i <= 130; i++) {
-            new Thread(() -> {
-                list.add(UUID.randomUUID().toString().substring(0, 8));
-                System.out.println(list);
-            }, "A").start();
-        }
+//        for (int i = 0; i <= 130; i++) {
+//            new Thread(() -> {
+//                list.add(UUID.randomUUID().toString().substring(0, 8));
+//                System.out.println(list);
+//            }, "A").start();
+//        }
     }
 }

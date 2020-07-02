@@ -40,21 +40,21 @@ public class ConditionDemo06 {
         AtomicInteger gloabFlag = new AtomicInteger(1);
 
         ShareDataTotal shareDataTotal = new ShareDataTotal();
-        new Thread(() -> {
-            for (int i = 0; i < 5; i++) {
-                shareDataTotal.printTotal(lock, condition1, condition2, 1, 2, gloabFlag, 5);
-            }
-        }, "A").start();
-        new Thread(() -> {
-            for (int i = 0; i < 5; i++) {
-                shareDataTotal.printTotal(lock, condition2, condition3, 2, 3, gloabFlag, 10);
-            }
-        }, "B").start();
-        new Thread(() -> {
-            for (int i = 0; i < 5; i++) {
-                shareDataTotal.printTotal(lock, condition3, condition1, 3, 1, gloabFlag, 15);
-            }
-        }, "C").start();
+//        new Thread(() -> {
+//            for (int i = 0; i < 5; i++) {
+//                shareDataTotal.printTotal(lock, condition1, condition2, 1, 2, gloabFlag, 5);
+//            }
+//        }, "A").start();
+//        new Thread(() -> {
+//            for (int i = 0; i < 5; i++) {
+//                shareDataTotal.printTotal(lock, condition2, condition3, 2, 3, gloabFlag, 10);
+//            }
+//        }, "B").start();
+//        new Thread(() -> {
+//            for (int i = 0; i < 5; i++) {
+//                shareDataTotal.printTotal(lock, condition3, condition1, 3, 1, gloabFlag, 15);
+//            }
+//        }, "C").start();
     }
 }
 

@@ -14,53 +14,53 @@ import java.util.concurrent.locks.ReentrantLock;
  * @create 2019-09-26 10:33
  **/
 public class WaitAndNotifyAll05 {
-    public static void main(String[] args) {
-        Customer customer = new Customer();
-
-        new Thread(() -> {
-            for (int i = 0; i < 20; i++) {
-//                try {
-//                    TimeUnit.MILLISECONDS.sleep(100);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-                customer.product();
-            }
-        }, "A").start();
-
-        new Thread(() -> {
-            for (int i = 0; i < 20; i++) {
-//                try {
-//                    TimeUnit.MILLISECONDS.sleep(100);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-                customer.custom();
-            }
-        }, "C").start();
-
-        new Thread(() -> {
-            for (int i = 0; i < 20; i++) {
-//                try {
-//                    TimeUnit.MILLISECONDS.sleep(100);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-                customer.product();
-            }
-        }, "B").start();
-
-        new Thread(() -> {
-            for (int i = 0; i < 20; i++) {
-//                try {
-//                    TimeUnit.MILLISECONDS.sleep(100);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-                customer.custom();
-            }
-        }, "D").start();
-    }
+//    public static void main(String[] args) {
+//        Customer customer = new Customer();
+//
+//        new Thread(() -> {
+//            for (int i = 0; i < 20; i++) {
+////                try {
+////                    TimeUnit.MILLISECONDS.sleep(100);
+////                } catch (InterruptedException e) {
+////                    e.printStackTrace();
+////                }
+//                customer.product();
+//            }
+//        }, "A").start();
+//
+//        new Thread(() -> {
+//            for (int i = 0; i < 20; i++) {
+////                try {
+////                    TimeUnit.MILLISECONDS.sleep(100);
+////                } catch (InterruptedException e) {
+////                    e.printStackTrace();
+////                }
+//                customer.custom();
+//            }
+//        }, "C").start();
+//
+//        new Thread(() -> {
+//            for (int i = 0; i < 20; i++) {
+////                try {
+////                    TimeUnit.MILLISECONDS.sleep(100);
+////                } catch (InterruptedException e) {
+////                    e.printStackTrace();
+////                }
+//                customer.product();
+//            }
+//        }, "B").start();
+//
+//        new Thread(() -> {
+//            for (int i = 0; i < 20; i++) {
+////                try {
+////                    TimeUnit.MILLISECONDS.sleep(100);
+////                } catch (InterruptedException e) {
+////                    e.printStackTrace();
+////                }
+//                customer.custom();
+//            }
+//        }, "D").start();
+//    }
 }
 
 class Customer {

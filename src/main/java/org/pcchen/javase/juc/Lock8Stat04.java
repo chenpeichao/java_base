@@ -17,16 +17,16 @@ import java.util.concurrent.TimeUnit;
 public class Lock8Stat04 {
     public static void main(String[] args) throws InterruptedException {
         Phone phone1 = new Phone();
-        new Thread(() -> {
-            phone1.sendMSM();
-        }).start();
-
-//        TimeUnit.SECONDS.sleep(1);
-
-        Phone phone2 = new Phone();
-        new Thread(() -> {
-            phone2.sendEmail();
-        }).start();
+//        new Thread(() -> {
+//            phone1.sendMSM();
+//        }).start();
+//
+////        TimeUnit.SECONDS.sleep(1);
+//
+//        Phone phone2 = new Phone();
+//        new Thread(() -> {
+//            phone2.sendEmail();
+//        }).start();
     }
 }
 

@@ -23,7 +23,7 @@ public class CallableDemo07 {
 
 class MyThread implements Callable<String> {
 
-    @Override
+
     public String call() throws Exception {
         System.out.println("执行测试的callable方法");
         return "test";
