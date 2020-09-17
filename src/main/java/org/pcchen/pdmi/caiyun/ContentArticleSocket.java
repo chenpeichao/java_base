@@ -18,14 +18,14 @@ import java.util.Map;
  **/
 public class ContentArticleSocket {
     public static void main(String[] args) {
-        String uarBaseContentCURLSocketIp = "10.10.32.76";
+        String uarBaseContentCURLSocketIp = "10.10.32.79";
         String uarBaseContentCURLSocketPort = "2222";
 
 //        System.out.println(new ContentArticleSocket().deleteByUrl("http://www.baidu.com/777711212121211234", uarBaseContentCURLSocketIp, uarBaseContentCURLSocketPort));
         System.out.println(new ContentArticleSocket().addContent(
-                "2039",//mediaId
-                "海外网",//source
-                "党媒平台网站",//columnName
+                "4078",//mediaId
+                "彩练新闻1",//source
+                "测试",//columnName
                 "https://www.hubpd.com/c/2020-07-09/966836.shtml",//url
                 "Y",//original
                 "2020-07-09 12:05:54",//publishTime
